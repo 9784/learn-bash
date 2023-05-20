@@ -26,6 +26,12 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
+```powershell
+Get-VM (Get-Content -Path .\set5.txt) | Select-Object -Property Name,@{Name='ToolsVersion';Expression={$_.Guest.ToolsVersion}},@{N = 'tools Status'; E = {(get-vm $_.Name| Get-View).Guest.ToolsStatus}}
+
+
+```
+
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 ### Jekyll Themes
